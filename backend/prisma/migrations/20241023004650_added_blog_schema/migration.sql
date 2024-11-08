@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE "Blog" ALTER COLUMN "authorId" SET DATA TYPE TEXT,
+ALTER COLUMN "published" SET DEFAULT false;
+
+-- AddForeignKey
+ALTER TABLE "Blog" ADD CONSTRAINT "Blog_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
