@@ -4,6 +4,7 @@ export const signInMiddleware = async (c : any, next : any) => {
     try{
         const body = await c.req.json();
         let { success } = signInInput.safeParse(body);
+        console.log(success)
         if (success){
             c.set("parsedBody", body);
             await next();

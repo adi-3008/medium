@@ -20,7 +20,7 @@ export const SignUpAuth = () => {
     async function sendRequest(){
         try {
             const res = await axios.post(`${BASE_URL}/api/v1/user/signUp`, signUpInput)
-            const jwt = res.data;
+            const jwt = res.data.jwt;
             localStorage.setItem("token", jwt);
             navigate("/blogs");
         }catch(e){

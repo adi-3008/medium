@@ -19,6 +19,7 @@ export const SignInAuth = () => {
     async function sendRequest(){
         try {
             const res = await axios.post(`${BASE_URL}/api/v1/user/signIn`, signInInput)
+            console.log(res);
             const jwt = res.data.jwt;
             localStorage.setItem("token", jwt);
             navigate("/blogs");

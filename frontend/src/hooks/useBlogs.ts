@@ -9,6 +9,7 @@ export const useBlogs : () => [ loading : boolean, blogs : Blog[] ] = () => {
 
     useEffect(() => {
         try{
+            console.log(localStorage.getItem("token"));
             const headers = { "authorization" : "Bearer " + localStorage.getItem("token") }
             axios.get(`${BASE_URL}/api/v1/blog/bulk`, { headers })
             .then((res) => {

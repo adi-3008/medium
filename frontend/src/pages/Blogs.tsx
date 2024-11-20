@@ -5,8 +5,6 @@ import { BlogCard } from "../components/BlogCard"
 export const Blogs = () => {
     const [loading, blogs] = useBlogs();
 
-    console.log(blogs);
-
     if(loading){
         return <div>Loading...</div>
     }

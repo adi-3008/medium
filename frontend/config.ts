@@ -1,1 +1,1 @@
-export const BASE_URL = "https://backend.testworker25.workers.dev";
+export const BASE_URL = "http://localhost:8787";

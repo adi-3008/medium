@@ -11,11 +11,11 @@ export const authMiddleware =  async(c : any, next : any) => {
                 msg : "invalid token"
             }
         )}
-
+        console.log(authHeader);
         const token = authHeader.startsWith("Bearer ") ? authHeader.substring(7) : "";
-
+        console.log(token);
         const user = await verify(token, "secret");
-
+        console.log(user);  
         if(user){
             c.set("userId", user.id)
             await next();
